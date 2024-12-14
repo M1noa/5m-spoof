@@ -21,6 +21,8 @@ Run the downloaded "[spoof.bat](https://github.com/M1noa/5m-spoof/raw/refs/heads
 
 Wait for it to load in and then type "3" and hit enter to cleanup and spoof :D
 
+lastly use a vpn like [Mullvad](https://mullvad.net)
+
 ###
 ###
 ###
