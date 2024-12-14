@@ -174,12 +174,6 @@ DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxGameCalla
 DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxGamingOverlay_*
 DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxSpeechToTextOverlay_*
 DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxApp_*
-dism /Online /Get-ProvisionedAppxPackages | Select-String PackageName | Select-String xbox
-dism /Online /Get-ProvisionedAppxPackages | `
-Select-String PackageName | `
-Select-String xbox | `
-ForEach-Object {$_.Line.Split(':')[1].Trim()} | `
-ForEach-Object { dism /Online /Remove-ProvisionedAppxPackage /PackageName:$_}
 dism /online /remove-provisionedappxpackage /packagename:Microsoft.XboxGameOverlay_1.47.14001.0_neutral_~_8wekyb3d8bbwe
 dism /online /remove-provisionedappxpackage /packagename:Microsoft.XboxGamingOverlay_3.34.15002.0_neutral_~_8wekyb3d8bbwe
 dism /online /remove-provisionedappxpackage /packagename:Microsoft.XboxIdentityProvider_12.58.1001.0_neutral_~_8wekyb3d8bbwe
@@ -190,12 +184,6 @@ dism /online /remove-provisionedappxpackage /packagename:Microsoft.XboxSpeechToT
 :: Remove Xbox services (requires admin privileges)
 powershell -Command "Get-Service | Where-Object { $_.DisplayName -like '*Xbox*' } | ForEach-Object { Stop-Service $_.Name -Force; Set-Service $_.Name -StartupType Disabled }"
 powershell -Command "Get-ProvisionedAppxPackage -Online | Where-Object { $_.PackageName -match "xbox" }"
-Get-ProvisionedAppxPackage -Online | `
-Where-Object { $_.PackageName -match "xbox" } | `
-ForEach-Object { Remove-ProvisionedAppxPackage -Online -PackageName $_.PackageName }
-Get-ProvisionedAppxPackage -Online | `
-Where-Object { $_.PackageName -match "xbox" } | `
-ForEach-Object { Remove-ProvisionedAppxPackage -Online -AllUsers -PackageName $_.PackageName }
 powershell -Command "Remove-AppxPackage Microsoft.XboxGameCallableUI_1000.15063.0.0_neutral_neutral_cw5n1h2txyewy"
 powershell -Command "Remove-AppxPackage Microsoft.XboxSpeechToTextOverlay_1.21.13002.0_x64__8wekyb3d8bbwe"
 powershell -Command "Remove-AppxPackage Microsoft.XboxGameOverlay_1.47.14001.0_x64__8wekyb3d8bbwe"
