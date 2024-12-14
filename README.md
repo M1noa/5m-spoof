@@ -7,4 +7,4 @@ Run as admin.
 
 Made for educational purposes, don't resell.
 
-[![showcase :D](https://catlitter.minoa.cat/api/view/ac75bf8dd0.jpg)](https://github.com/M1noa/5m-spoof/raw/refs/heads/main/showcase.mp4 "showcase :D")
+[![showcase :D]](https://github.com/M1noa/5m-spoof/raw/refs/heads/main/showcase.mp4 "showcase :D")
