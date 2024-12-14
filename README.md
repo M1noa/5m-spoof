@@ -7,7 +7,7 @@ make sure to look at the code as it does edit registry keys and delete a LOT of 
 Run as admin.
 
 [Download](https://github.com/M1noa/5m-spoof/raw/refs/heads/main/spoof.bat)
--# Right-click the link and choose "Save link as..." to download the file.
+> Right-click the link and choose "Save link as..." to download the file.
 
 
 
