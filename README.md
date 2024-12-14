@@ -1,12 +1,13 @@
-# 5m  spoof
+# 5m Spoof
 fivem spoofer in batch made by me :D
 
 make sure to look at the code
 
 run as admin
 
-made for educational stuffs, dont resell
+made for educational stuffs, don't resell
 
-[![showcase :D]
-([https://i.ytimg.com/vi/Hc79sDi3f0U/maxresdefault.jpg](https://catlitter.minoa.cat/api/view/ac75bf8dd0.jpg))]
-(https://github.com/M1noa/5m-spoof/raw/refs/heads/main/showcase.mp4 "showcase :D")
+<video width="640" height="360" controls>
+  <source src="https://github.com/M1noa/5m-spoof/raw/refs/heads/main/showcase.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
