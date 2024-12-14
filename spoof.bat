@@ -165,18 +165,37 @@ if exist "%WINDIR%\System32\deltree.exe" (
 )
 :jusdl
 taskkill /f /im Steam.exe /t
+:: Run PowerShell to remove Xbox apps
 PowerShell -Command "Get-AppxPackage *xbox* | Remove-AppxPackage"
+
+:: Attempt to force remove system Xbox apps using DISM
+echo Force removing Xbox-related system apps...
+DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxGameCallableUI_*
+DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxGamingOverlay_*
+DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxSpeechToTextOverlay_*
+DISM /Online /Remove-ProvisionedAppxPackage /PackageName:Microsoft.XboxApp_*
+
+:: Remove Xbox services (requires admin privileges)
 powershell -Command "Get-Service | Where-Object { $_.DisplayName -like '*Xbox*' } | ForEach-Object { Stop-Service $_.Name -Force; Set-Service $_.Name -StartupType Disabled }"
+
+:: Remove Xbox-related registry keys (run as Administrator)
 reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Xbox" /f
 reg delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Xbox" /f
 reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XblAuthManager" /f
 reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XblGameSave" /f
 reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxGipSvc" /f
 reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxNetApiSvc" /f
+
+:: Remove Xbox-related folders
+echo Removing Xbox-related folders...
 rd /s /q "%LOCALAPPDATA%\Packages\Microsoft.Xbox*"
 rd /s /q "%ProgramFiles%\WindowsApps\Microsoft.Xbox*"
 rd /s /q "%ProgramFiles(x86)%\Microsoft Xbox"
+
+:: Remove additional leftover components
+echo Cleaning up...
 powershell -Command "Remove-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR' -Recurse -Force"
+
 set hostspath=%windir%\System32\drivers\etc\hosts
 echo 127.0.0.1 xboxlive.com >> %hostspath%
 echo 127.0.0.1 user.auth.xboxlive.com >> %hostspath%
