@@ -11,6 +11,12 @@ make sure to look at the code as it does edit registry keys and delete a LOT of 
 
 use [Bulk Crap Uninstaller](https://github.com/Klocman/Bulk-Crap-Uninstaller/releases) to delete all "Xbox" related apps,
 
+make sure your windows account is a "Local Account"
+
+make sure youre logged into a different steam account (doesent have to own gta)
+
+switch discord accounts or disconnect fivem from your main/current account
+
 Run the downloaded "[spoof.bat](https://github.com/M1noa/5m-spoof/raw/refs/heads/main/spoof.bat)" file as admin.
 
 Wait for it to load in and then type "3" and hit enter to cleanup and spoof :D
