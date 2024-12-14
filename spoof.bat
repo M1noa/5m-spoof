@@ -29,7 +29,7 @@ echo                                                         W A R N I N G
 echo                          MAKE SURE YOU HAVE CHECKED THE CODE AND YOU ARE COMFY WITH WHAT IT DOES
 echo                                  MAKE SURE YOU HAVE ALSO RAN THE SCRIPT AS ADMINISTRATOR
 echo.
-echo                                      follow the tutorial at github.com/M1noa/5m-spoof
+echo                                     follow the tutorial at github.com/M1noa/5m-spoof
 echo.
 echo.
 echo.
