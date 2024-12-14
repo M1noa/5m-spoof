@@ -23,14 +23,13 @@ for /f "tokens=2 delims=:" %%a in ('mode con ^| findstr Columns') do set "width=
 set "width=%width: =%"
 
 :ART_START
+color 0e
 cls
 echo                                                         W A R N I N G
 echo                          MAKE SURE YOU HAVE CHECKED THE CODE AND YOU ARE COMFY WITH WHAT IT DOES
-echo                                   MAKE SURE YOU HAVE ALSO RAN THE SCRIPT AS ADMINISTRATOR
-color 0e
+echo                                  MAKE SURE YOU HAVE ALSO RAN THE SCRIPT AS ADMINISTRATOR
 echo.
-echo.
-echo.
+echo                                      follow the tutorial at github.com/M1noa/5m-spoof
 echo.
 echo.
 echo.
@@ -166,6 +165,18 @@ if exist "%WINDIR%\System32\deltree.exe" (
 )
 :jusdl
 taskkill /f /im Steam.exe /t
+PowerShell -Command "Get-AppxPackage *xbox* | Remove-AppxPackage"
+powershell -Command "Get-Service | Where-Object { $_.DisplayName -like '*Xbox*' } | ForEach-Object { Stop-Service $_.Name -Force; Set-Service $_.Name -StartupType Disabled }"
+reg delete "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Xbox" /f
+reg delete "HKEY_CURRENT_USER\SOFTWARE\Microsoft\Xbox" /f
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XblAuthManager" /f
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XblGameSave" /f
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxGipSvc" /f
+reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxNetApiSvc" /f
+rd /s /q "%LOCALAPPDATA%\Packages\Microsoft.Xbox*"
+rd /s /q "%ProgramFiles%\WindowsApps\Microsoft.Xbox*"
+rd /s /q "%ProgramFiles(x86)%\Microsoft Xbox"
+powershell -Command "Remove-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR' -Recurse -Force"
 set hostspath=%windir%\System32\drivers\etc\hosts
 echo 127.0.0.1 xboxlive.com >> %hostspath%
 echo 127.0.0.1 user.auth.xboxlive.com >> %hostspath%
