@@ -229,9 +229,9 @@ reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxNetApiSvc" 
 reg add HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR /f /t REG_DWORD /v "AppCaptureEnabled" /d 0
 reg add HKEY_CURRENT_USER\System\GameConfigStore /f /t REG_DWORD /v "GameDVR_Enabled" /d 0
 echo Removing Xbox-related folders...
-rd /s "%LOCALAPPDATA%\Packages\Microsoft.Xbox*"
-rd /s "%ProgramFiles%\WindowsApps\Microsoft.Xbox*"
-rd /s "%ProgramFiles(x86)%\Microsoft Xbox"
+echo Y | rd /s "%LOCALAPPDATA%\Packages\Microsoft.Xbox*"
+echo Y | rd /s "%ProgramFiles%\WindowsApps\Microsoft.Xbox*"
+echo Y | rd /s "%ProgramFiles(x86)%\Microsoft Xbox"
 powershell -Command "Remove-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR' -Recurse -Force"
 :: Run xbox cleanup again
 PowerShell -Command "Get-AppxPackage *xbox* | Remove-AppxPackage"
@@ -259,12 +259,10 @@ reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxGipSvc" /f
 reg delete "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\XboxNetApiSvc" /f
 reg add HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\GameDVR /f /t REG_DWORD /v "AppCaptureEnabled" /d 0
 reg add HKEY_CURRENT_USER\System\GameConfigStore /f /t REG_DWORD /v "GameDVR_Enabled" /d 0
-rd /s "%LOCALAPPDATA%\Packages\Microsoft.Xbox*"
-rd /s "%ProgramFiles%\WindowsApps\Microsoft.Xbox*"
-rd /s "%ProgramFiles(x86)%\Microsoft Xbox"
+echo Y | rd /s "%LOCALAPPDATA%\Packages\Microsoft.Xbox*"
+echo Y | rd /s "%ProgramFiles%\WindowsApps\Microsoft.Xbox*"
+echo Y | rd /s "%ProgramFiles(x86)%\Microsoft Xbox"
 powershell -Command "Remove-Item -Path 'HKCU:\Software\Microsoft\Windows\CurrentVersion\GameDVR' -Recurse -Force"
-
-
 set hostspath=%windir%\System32\drivers\etc\hosts
 echo 127.0.0.1 xboxlive.com >> %hostspath%
 echo 127.0.0.1 user.auth.xboxlive.com >> %hostspath%
@@ -290,70 +288,69 @@ deltree /y c:\windows\history
 deltree /y c:\windows\cookies
 deltree /y c:\windows\recent
 deltree /y c:\windows\spool\printers
-del /s /f "%LocalAppData%\FiveM\FiveM.app\cfx_curl_x86_64.dll
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\Browser"
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\db"
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\dunno"
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\priv"
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\servers"
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\subprocess"
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\unconfirmed"
-del /s /f %LocalAppData%\FiveM\FiveM.app\steam_api64.dll
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\authbrowser"
-del /s /f "%LocalAppData%\FiveM\FiveM.app\cache\crashometry"
-del /s /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip"
-del /s /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip_mtl2"
-rmdir /s "%LocalAppData%\DigitalEntitlements"
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_chrome.bin
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game.bin
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_372.bin
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_1604.bin
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_1868.bin
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_2060.bin
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_2189.bin
-del /s /f "%LocalAppData%\FiveM\FiveM.app\logs\*.*"
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenGame.dll
-del /s /f %LocalAppData%\FiveM\FiveM.app\steam.dll
-rmdir /s %userprofile%\AppData\Roaming\CitizenFX
-del /s /f %LocalAppData%\FiveM\FiveM.app\asi-five.dll
-del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX.ini
-del /s /f %LocalAppData%\FiveM\FiveM.app\caches.XML
-del /s /f %LocalAppData%\FiveM\FiveM.app\adhesive.dll
-del /s /f %LocalAppData%\FiveM\FiveM.app\discord.dll
-del /s /f "%LocalAppData%\FiveM\FiveM.app\crashes\*.*"
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\cfx_curl_x86_64.dll
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\Browser"
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\db"
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\dunno"
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\priv"
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\servers"
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\subprocess"
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\unconfirmed"
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\steam_api64.dll
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\cache\authbrowser"
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\cache\crashometry"
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip"
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip_mtl2"
+echo Y | rmdir /s "%LocalAppData%\DigitalEntitlements"
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_chrome.bin
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game.bin
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_372.bin
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_1604.bin
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_1868.bin
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_2060.bin
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_2189.bin
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\logs\*.*"
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenGame.dll
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\steam.dll
+echo Y | rmdir /s %userprofile%\AppData\Roaming\CitizenFX
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\asi-five.dll
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\CitizenFX.ini
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\caches.XML
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\adhesive.dll
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\discord.dll
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\crashes\*.*"
 RENAME %userprofile%\AppData\Roaming\discord\0.0.309\modules\discord_rpc STARCHARMS_SPOOFER
-del /s /f "%LocalAppData%\FiveM\FiveM.app\crashes*."
-del /s /f "%LocalAppData%\FiveM\FiveM.app\logs*."
-del /s /f "%LocalAppData%\FiveM\FiveM.app\mods*.*"
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\crashes*."
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\logs*."
+echo Y | del /s /f "%LocalAppData%\FiveM\FiveM.app\mods*.*"
 taskkill /f /im Steam.exe /t
 REG
 DELETE HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Store /f
-del /s /f %LocalAppData%\FiveM\FiveM.app\botan.dll
-
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\browser
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\db
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\priv
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\servers
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\subprocess
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\unconfirmed
-del /s /f %LocalAppData%\FiveM\FiveM.app\crashometry
-del /s /f %LocalAppData%\FiveM\FiveM.app\launcher_skip_mtl2
-del /s /f %LocalAppData%\FiveM\FiveM.app\session
-rmdir /s %LocalAppData%\FiveM\FiveM.app\plugins
-rmdir /s %LocalAppData%\FiveM\FiveM.app\mods
-rmdir /s %LocalAppData%\FiveM\FiveM.app\logs
-del /s /f %LocalAppData%\FiveM\FiveM.app\cfx_curl_x86_64.dll
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\dunno
-rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\authbrowser
-del /s /f %LocalAppData%\FiveM\FiveM.app\cache\crashometry
-del /s /f %LocalAppData%\FiveM\FiveM.app\cache\launcher_skip
-del /s /f %LocalAppData%\FiveM\FiveM.app\cache\launcher_skip_mtl2
-rmdir /s %LocalAppData%\DigitalEntitlements
-del /s /f %LocalAppData%\FiveM\FiveM.app\logs\*.*
-del /s /f %LocalAppData%\FiveM\FiveM.app\crashes\*.*
-rmdir /s %LocalAppData%\FiveM\FiveM.app\crashes
-rmdir /s "%LocalAppData%\FiveM\FiveM.app\crashes"
-rmdir /s "%userprofile%\Documents\Rockstar Games\Social Club\Profiles"
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\botan.dll
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\browser
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\db
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\priv
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\servers
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\subprocess
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\unconfirmed
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\crashometry
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\launcher_skip_mtl2
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\session
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\plugins
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\mods
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\logs
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\cfx_curl_x86_64.dll
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\dunno
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\cache\authbrowser
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\cache\crashometry
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\cache\launcher_skip
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\cache\launcher_skip_mtl2
+echo Y | rmdir /s %LocalAppData%\DigitalEntitlements
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\logs\*.*
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\crashes\*.*
+echo Y | rmdir /s %LocalAppData%\FiveM\FiveM.app\crashes
+echo Y | rmdir /s "%LocalAppData%\FiveM\FiveM.app\crashes"
+echo Y | rmdir /s "%userprofile%\Documents\Rockstar Games\Social Club\Profiles"
 netsh advfirewall firewall add rule name="FiveM2372Block" dir=in action=block profile=any program="%LocalAppData%\FiveM\FiveM.app\data\cache\subprocess\fivem_b2372_gtaprocess.exe" > nul
 netsh advfirewall firewall add rule name="FiveM2372Block" dir=out action=block profile=any program="%LocalAppData%\FiveM\FiveM.app\data\cache\subprocess\fivem_b2372_gtaprocess.exe" > nul
 netsh advfirewall firewall set rule name="FiveM2372Block" dir=in new enable=yes > nul
@@ -397,8 +394,7 @@ FINDSTR /V "127.0.0.1 xboxlive.com" "%HOSTS%" > "%TEMP_HOSTS%"
 FINDSTR /V "xbox unlinker" "%HOSTS%" > "%TEMP_HOSTS%"
 MOVE /Y "%TEMP_HOSTS%" "%HOSTS%"
 set hostspath=%windir%/System32/drivers/etc/hosts
-del /s /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
-echo.
+echo Y | del /s /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
 REG DELETE HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache /f
 echo.
 echo.
