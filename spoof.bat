@@ -270,7 +270,6 @@ del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cache\crashometry"
 del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip"
 del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip_mtl2"
 rmdir /s /q "%LocalAppData%\DigitalEntitlements"
-del /s /q /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_chrome.bin
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game.bin
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_372.bin
@@ -347,7 +346,6 @@ del /s /q /f %LocalAppData%\FiveM\FiveM.app\asi-five.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\steam.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\steam_api64.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenGame.dll
-del /s /q /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
 del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cfx_curl_x86_64.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX.ini
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\caches.XML
@@ -429,8 +427,6 @@ del /s /q /f %LocalAppData%\FiveM\FiveM.app\cache\launcher_skip
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\cache\launcher_skip_mtl2
 
 rmdir /s /q %LocalAppData%\DigitalEntitlements
-
-del /s /q /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
 
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_chrome.bin
 
@@ -516,7 +512,6 @@ del /s /q /f %LocalAppData%\FiveM\FiveM.app\asi-five.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\steam.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\steam_api64.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenGame.dll
-del /s /q /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
 del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cfx_curl_x86_64.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX.ini
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\caches.XML
@@ -657,7 +652,6 @@ del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cache\crashometry"
 del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip"
 del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cache\launcher_skip_mtl2"
 rmdir /s /q "%LocalAppData%\DigitalEntitlements"
-del /s /q /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_chrome.bin
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game.bin
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX_SubProcess_game_372.bin
@@ -719,7 +713,6 @@ del /s /q /f %LocalAppData%\FiveM\FiveM.app\asi-five.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\steam.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\steam_api64.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenGame.dll
-del /s /q /f %LocalAppData%\FiveM\FiveM.app\profiles.dll
 del /s /q /f "%LocalAppData%\FiveM\FiveM.app\cfx_curl_x86_64.dll
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\CitizenFX.ini
 del /s /q /f %LocalAppData%\FiveM\FiveM.app\caches.XML
